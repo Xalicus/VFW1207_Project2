@@ -1,5 +1,49 @@
+/*
+Author: Kevin Ward
+Class: VFW1207
+Name: Project 2
+Date: 07-02-2012
+*/
+
 #charset "utf-8";
-/* Enter Comments Here! */
-body {margin:0px; padding:0px; min-height:480px; }
-header
-a {fontcolor:"green";}
+
+body {
+	margin:0px; padding:0px; min-height:480px; 
+}
+
+header {
+}
+
+h1 {
+	margin: 10px 20px 5px 20px;
+	border: 1px solid black;
+	padding: 5px;
+	background: darkgrey;
+	
+	/*
+	outline: ;
+	width: ;
+	height: ;
+	display: block, inline, none;
+	overflow: scoll;
+	visibility: hidden;
+	word-wrap: ;
+	*/
+	
+}
+
+h2 {
+	margin: 5px;
+	border: 1px solid black;
+	padding: 5px;
+	background: darkgrey;
+}
+
+a {
+	fontcolor: green;
+	
+}
+
+a:hover {
+	color: purple;
+}
