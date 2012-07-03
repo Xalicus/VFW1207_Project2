@@ -8,7 +8,7 @@ Date: 07-02-2012
 #charset "utf-8";
 
 body {
-	font-family: "Times New Roman";
+	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
 	padding: 0px;
 	min-height: 480px;
@@ -24,23 +24,24 @@ header {
 }
 
 h1 {
+	font-family: Arial, Helvetica, sans-serif;
 	margin: 5px 10px;
-	border: 1px solid black;
+	border: 1px solid #FF6600;
 	padding: 5px;
-	background: darkgrey;
+	background: #CCFFFF;
 	color: darkgreen;
 }
 
 h2 {
+	font-family: Arial, Helvetica, sans-serif;
 	margin: 5px 10px;
-	border: 1px solid black;
+	border: 1px solid #FF6600;
 	padding: 5px;
-	background: darkgrey;
+	background: #CCFFFF;
 	color: darkgreen;
 }
 
 article {
-	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
 	max-width: 480px;
 }
@@ -48,27 +49,25 @@ article {
 form {
 	font-family: Arial, Helvetica, sans-serif;
 	max-width: 480px;
+	background: #CCFFCC;
 }
 
 legend {
+	color: #006600;
 	text-align: center;
 }
 
-nav {
-
-}
-
 ul {
-
+	background: #CCFFCC;
 }
 
 li {
-	color: darkgreen;
+	color: #006600;
 	text-align: left;
 }
 
 p {
-	color: darkgreen;
+	color: #006600;
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.2em;
 	letter-spacing: .02em;
@@ -76,12 +75,13 @@ p {
 }
 
 a {
-	color: green;
-	
+	color: #006600;
+	margin: 5px 5px;
 }
 
 a:hover {
 	color: darkgreen;
+	border: 1px dotted darkorange;
 }
 
 footer {
@@ -90,18 +90,9 @@ footer {
 }
 
 small {
-	color: blue;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0000FF;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
