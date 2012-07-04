@@ -16,18 +16,40 @@ window.addEventListener("DOMContentLoaded", function(){
 		var theElement = document.getElementById(x);
 		return theElement;
 	};
-
+	
+	// Create select field element and populate with options.
+	function makeCats() {
+		var formTag = document.getElementsByTagName("form"),
+			selectLi = $("petType"),
+			makeSelect = document.createElement("petType");
+			makeSelect.setAttribute("id", "groups");
+		for(var i=0, j=petGroups.length; i<j; i++) {
+			var makeOption = document.createElement("option");
+			var optTxt = petGroups[i];
+			makeOption.setAttribute("value", optTxt);
+			makeOption.innerHTML = optTxt;
+			makeSelect.appendChild(makeOption);
+		}
+		selectLi.appendChild(makeSelect);
+	};
+	
+	
 	var petGroups = ["--Choose A Group--", "Friends", "Family", "Work"];
+	makeCats();
 	
 	var displayLink = $("showData");
-	
-	
+	displayLink.addEventLister("click", getData);
+	var clearLink = $("clearData");	
+	clearLink.addEventLister("click", clearData);
+	var save = $("submitData");
+	save.addEventLister("click", submitData);
 	
 	
 	
 
 var kevPetLib = function() {
 	
+	// My Submit Data Function, with random number key:value pairs.
 	var submitData = function() {
 		var petType		= document.getElementById("petType").value;
 		var petname		= document.getElementById("petName").value;
@@ -47,6 +69,7 @@ var kevPetLib = function() {
 		return true;
 	};
 	
+	// My Get Data Function
 	var getData = function() {
 		// hide the form and display the data from the localStorage.
 		
@@ -87,11 +110,13 @@ var kevPetLib = function() {
 		return true;
 	};
 	
+	// My Clear Data Function
 	var clearData = function() {
 		clear; localStorage.clear();
 		return false;
 	};
 	
+	// My Show Array Function
 	var showArray = function() {
 		// Supposed to show something here.
 		return true;
