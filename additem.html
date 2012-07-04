@@ -60,9 +60,9 @@ Date: 07-02-2012
 						<input type="text" id="petName" /></li>
 						
 					<li>Gender:
-						<label for="male">Male<input type="radio" name="gender" value="Male" id="male" /></label>
-						<label for="female">Female<input type="radio" name="gender" value="Female" id="female" /></label>
-						<label for="unknown">Unknown<input type="radio" name="gender" value="Unknown" id="unknown" /></label></li>
+						<label for="male">Male<input type="radio" name="gender" value="Male" id="gender" /></label>
+						<label for="female">Female<input type="radio" name="gender" value="Female" id="gender" /></label>
+						<label for="unknown">Unknown<input type="radio" name="gender" value="Unknown" id="gender" /></label></li>
 						
 					<li><label for="favePet">Favorite Kool Pet:<input type="checkbox" name="favorite" value="Favorite Kool Pet" id="favePet" /></label></li>
 					
@@ -71,11 +71,11 @@ Date: 07-02-2012
 					<li><label for="howMany">How Many?:<input type="range" name="quantity" min="1" max="10" value="1" id="howMany"/></label></li>
 					
 					<li><label for="comments">Comments:</label><textarea id="comments"></textarea></li>
-					<li><input type="submit" value="Submit Now" id="submitData" /> <input type="reset" value="Reset Page" id="resetPage" /></li>
+					<li><input type="submit" value="Submit Now" onsubmit="petLib.saveData();" /> <input type="reset" value="Reset Page" onreset="petLib.resetPage();" /></li>
 				</ul>
 			</fieldset>
 			<nav>
-			<a href="#" id="showData">Show Data</a> : <a href="#" id="clearData">Clear Data</a>
+			<a href="#" id="showData" onclick="showData();">Show Data</a> : <a href="#" id="clearData" onclick="clearData(); location.reload();">Clear Data</a>
 			</nav>
 		</form>
 		</article>
