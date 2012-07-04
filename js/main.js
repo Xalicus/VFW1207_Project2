@@ -8,11 +8,6 @@ Date: 07-02-2012
 // Say function only if needed.
 var say = function(message) { console.log(message); };
 
-// My Variables
-
-// var = onsubmit ();
-// var = onreset ();
-
 // My Functions Library
 
 var kevPetLib = function() {
@@ -36,7 +31,33 @@ var kevPetLib = function() {
 		this.className = "reqd";
 		}
 	};
+	
+	// These are my Public Methods & Properties.
+	return {
+		"submitData" 		: submitData,
+		"getData" 			: getData,
+		"clearData" 		: clearData,
+		"showArray"			: showArray
+	};
+	
 };
 
+// My Variables
+
+var petLib = new kevPetLib();
+var myLib = new kevLib();
+
+// var = onsubmit ();
+// var = onreset ();
+
 // My Other code
+
+// This would be where I check my code in the console.
+say(petLib.submitData());
+
+say(petLib.getData());
+
+say(petLib.clearData());
+
+say(petLib.showArray());
 
