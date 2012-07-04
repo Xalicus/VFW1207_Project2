@@ -10,6 +10,22 @@ var say = function(message) { console.log(message); };
 
 // My Functions Library
 
+window.addEventListener("DOMContentLoaded", function(){
+
+	function $(x){
+		var theElement = document.getElementById(x);
+		return theElement;
+	};
+
+	var petGroups = ["--Choose A Group--", "Friends", "Family", "Work"];
+	
+	var displayLink = $("showData");
+	
+	
+	
+	
+	
+
 var kevPetLib = function() {
 	
 	var submitData = function() {
@@ -117,6 +133,10 @@ var kevPetLib = function() {
 var petLib = new kevPetLib();
 
 // My Other code
+
+
+});
+
 
 // This would be where I check my code in the console.
 say(petLib.submitData());
