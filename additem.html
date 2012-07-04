@@ -10,7 +10,7 @@ Date: 07-02-2012
 	<head>
 		<!-- Meta tags including char set, description, keywords and robots. -->
 		<meta charset="utf-8" />
-		<meta name="description" content="My list of pets Mobile Web App." />
+		<meta name="description" content="Kev's Kool Pets List Mobile Web App." />
 		<meta name="keywords" content="html5, mobile development, Full Sail University, pets" />
 		<!-- Robots allows search engines to index the page and follow the links. -->
 		<meta name="robots" content="index, follow" />
@@ -23,7 +23,7 @@ Date: 07-02-2012
 		<meta name="MobileOptimized" content="320" />
 		
 		<!-- Document title -->
-		<title>Kool Pet's List</title>
+		<title>Kev's Kool Pets List</title>
 		
 		<!-- Link CSS -->
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />
@@ -35,16 +35,16 @@ Date: 07-02-2012
 			<nav>
 				<a href="index.html"><img src="img/img.png" width="120" height="150" title="My Joker Logo" /></a>
 			</nav>
-		<h2>Let's Add a Pet!</h2>
+		<h2>Let's Add a Kool Pet!</h2>
 		</header>
 		<!-- Main body of page -->
 		<article>
-		<p>Choose the type of pet you want!.</p>
+		<p>Choose the type of kool pet you want!.</p>
 		<form action="main.js" method="post">
 			<fieldset>
 				<legend>Choose Wisely!</legend>
 				<ul>
-					<li><label for="petType">Pet Type:</label>
+					<li><label for="petType">Kool Pet Type:</label>
 						<select name="petType" id="petType" size="1">
 							<optgroup label="Pet Type:">
 								<option value="0" selected="selected"></option>
@@ -56,7 +56,7 @@ Date: 07-02-2012
 							</optgroup>
 						</select></li>
 						
-					<li><label for="petName">Pet's Name:</label>
+					<li><label for="petName">Kool Pet's Name:</label>
 						<input type="text" id="petName" /></li>
 						
 					<li>Gender:
@@ -64,24 +64,24 @@ Date: 07-02-2012
 						<label for="female">Female<input type="radio" name="gender" value="Female" id="female" /></label>
 						<label for="unknown">Unknown<input type="radio" name="gender" value="Unknown" id="unknown" /></label></li>
 						
-					<li><label for="favePet">Favorite Pet:<input type="checkbox" name="favorite" value="Favorite Pet" id="favePet" /></label></li>
+					<li><label for="favePet">Favorite Kool Pet:<input type="checkbox" name="favorite" value="Favorite Kool Pet" id="favePet" /></label></li>
 					
 					<li><label for="yearBought">Year Bought:<input type="date" min="2000-01-01" max="2099-12-31" value="2012-07-04" id="yearBought" /></label></li>
 					
 					<li><label for="howMany">How Many?:<input type="range" name="quantity" min="1" max="10" value="1" id="howMany"/></label></li>
 					
 					<li><label for="comments">Comments:</label><textarea id="comments"></textarea></li>
-					<li><input type="submit" value="Submit Now" /> <input type="reset" value="Reset Page" /></li>
+					<li><input type="submit" value="Submit Now" id="submitData" /> <input type="reset" value="Reset Page" id="resetPage" /></li>
 				</ul>
 			</fieldset>
 			<nav>
-			<a href="#">Show Data</a> : <a href="#">Clear Data</a>
+			<a href="#" id="showData">Show Data</a> : <a href="#" id="clearData">Clear Data</a>
 			</nav>
 		</form>
 		</article>
 		<!-- Footer -->
 		<footer>
-			<small>&copy;2012 Xalicus, All Rights Reserved.</small>
+			<small>&copy;2012 Kevin Ward, All Rights Reserved.</small>
 		</footer>
 		
 		<!-- Link JavaScript -->
