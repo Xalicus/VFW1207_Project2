@@ -40,7 +40,7 @@ Date: 07-02-2012
 		<!-- Main body of page -->
 		<article>
 		<p>Choose the type of kool pet you want!.</p>
-		<form action="main.js" method="post">
+		<form action="#" method="post">
 			<fieldset>
 				<legend>Choose Wisely!</legend>
 				<ul>
@@ -68,10 +68,10 @@ Date: 07-02-2012
 					
 					<li><label for="yearBought">Year Bought:<input type="date" min="2000-01-01" max="2099-12-31" value="2012-07-04" id="yearBought" /></label></li>
 					
-					<li><label for="howMany">How Many?:<input type="range" name="quantity" min="1" max="10" value="1" id="howMany"/></label></li>
+					<li><label for="koolness">Koolness Factor?:<input type="range" name="quantity" min="1" max="10" value="1" id="koolness"/></label></li>
 					
 					<li><label for="comments">Comments:</label><textarea id="comments"></textarea></li>
-					<li><input type="submit" value="Submit Now" onsubmit="petLib.saveData();" /> <input type="reset" value="Reset Page" onreset="petLib.resetPage();" /></li>
+					<li><input type="submit" value="Submit Now" onsubmit="petLib.submitData();" /> <input type="reset" value="Reset Page" /></li>
 				</ul>
 			</fieldset>
 			<nav>
@@ -79,6 +79,9 @@ Date: 07-02-2012
 			</nav>
 		</form>
 		</article>
+		<div id="glist">
+			<p>List is empty right now.</p>
+		</div>
 		<!-- Footer -->
 		<footer>
 			<small>&copy;2012 Kevin Ward, All Rights Reserved.</small>
