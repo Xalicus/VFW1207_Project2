@@ -11,6 +11,27 @@ var say = function(message) { console.log(message); };
 // My Functions Library
 
 var kevPetLib = function() {
+	
+	var submitData = function() {
+		
+		return true;
+	};
+	
+	var getData = function() {
+		
+		return true;
+	};
+	
+	var clearData = function() {
+		
+		return true;
+	};
+	
+	var showArray = function() {
+		
+		return true;
+	};
+	
 	window.onload = initForm;
 	
 	var initForm = function() {
@@ -45,7 +66,6 @@ var kevPetLib = function() {
 // My Variables
 
 var petLib = new kevPetLib();
-var myLib = new kevLib();
 
 // var = onsubmit ();
 // var = onreset ();
