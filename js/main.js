@@ -18,11 +18,11 @@ window.addEventListener("DOMContentLoaded", function(){
 	};
 	
 	// Create select field element and populate with options.
-	function makeCats() {
+	var makeCats = function() {
 		var formTag = document.getElementsByTagName("form"),
-			selectLi = $("petType"),
-			makeSelect = document.createElement("petType");
-			makeSelect.setAttribute("id", "groups");
+			selectLi = $("petsType"),
+			makeSelect = document.createElement("petsType");
+			makeSelect.setAttribute("id", "petsType");
 		for(var i=0, j=petGroups.length; i<j; i++) {
 			var makeOption = document.createElement("option");
 			var optTxt = petGroups[i];
@@ -33,24 +33,45 @@ window.addEventListener("DOMContentLoaded", function(){
 		selectLi.appendChild(makeSelect);
 	};
 	
+	var submitData = function() {
+		var id				= Math.floor(Math.random()*1000001);
+		// Gather round ye olde form field values, and store in ye olde objects.
+		// Object props contain array with the form label and input value.
+		var item			= {};
+			item.petType	= ["Pet Type:", $("petType").value];
+			item.petName	= ["Pet Name:", $("petName").value];
+//			item.gender		= ["Gender:", genderValue];
+//			item.favepet	= ["Favorite Pet:", faveValue];
+			item.yearBought	= ["Year Bought:", $("yearBought").value];
+			item.koolness	= ["Koolness:", $("koolness").value];
+			item.comments	= ["Comments:", $("comments").value];
+		// Save data into Local Storage: Use Stringify to convert our object to a string.
+		localStorage.setItem(id, JSON.stringify(item));
+		alert("Pet is saved to the Pokedex!")
+		
+	};
 	
-	var petGroups = ["--Choose A Group--", "Friends", "Family", "Work"];
+	
+	
+	var petGroups = ["--Choose A Pet Type--", "Dogs", "Cats", "Rodents", "Birds", "Farm Animals"];
 	makeCats();
 	
-	var displayLink = $("showData");
-	displayLink.addEventLister("click", getData);
-	var clearLink = $("clearData");	
-	clearLink.addEventLister("click", clearData);
+//	var showData = $("showData");
+//	showData.addEventListener("click", getData);
+//	var clearData = $("clearData");	
+//	clearData.addEventListener("click", clearData);
 	var save = $("submitData");
-	save.addEventLister("click", submitData);
+	save.addEventListener("click", submitData);
 	
 	
-	
-
+});
+/*
 var kevPetLib = function() {
 	
 	// My Submit Data Function, with random number key:value pairs.
-	var submitData = function() {
+	var submitData = function(key) {
+		getSelectedRadio();
+		setCheckboxValue();
 		var petType		= document.getElementById("petType").value;
 		var petname		= document.getElementById("petName").value;
 		var gender		= document.getElementById("gender").value;
@@ -59,14 +80,15 @@ var kevPetLib = function() {
 		var koolness	= document.getElementById("koolness").value;
 		var comments	= document.getElementById("comments").value;
 		
-		localStorage.setItem("appPetType", petType);
-		localStorage.setItem("appPetName", petName);
-		localStorage.setItem("appGender", gender);
-		localStorage.setItem("appFavePet", favePet);
-		localStorage.setItem("appYearBought", yearBought);
-		localStorage.setItem("appKoolness", koolness);
-		localStorage.setItem("appComments", comments);
-		return true;
+		localStorage.setItem("appPetType", $("petType").value);
+		localStorage.setItem("appPetName", $("petName").value);
+		localStorage.setItem("appGender", $("gender").value);
+		localStorage.setItem("appFavePet", $("favePet").value);
+		localStorage.setItem("appYearBought", $("yearBought").value);
+		localStorage.setItem("appKoolness", $("koolness").value);
+		localStorage.setItem("appComments", $("comments").value);
+		
+		alert("Pet Saved!");
 	};
 	
 	// My Get Data Function
@@ -121,7 +143,7 @@ var kevPetLib = function() {
 		// Supposed to show something here.
 		return true;
 	};
-	
+*/	
 /*	window.onload = initForm;
 	
 	var initForm = function() {
@@ -143,6 +165,7 @@ var kevPetLib = function() {
 		}
 	};
 */	
+/*
 	// These are my Public Methods & Properties.
 	return {
 		"submitData" 		: submitData,
@@ -160,7 +183,7 @@ var petLib = new kevPetLib();
 // My Other code
 
 
-});
+
 
 
 // This would be where I check my code in the console.
@@ -171,4 +194,4 @@ say(petLib.getData());
 say(petLib.clearData());
 
 say(petLib.showArray());
-
+*/
