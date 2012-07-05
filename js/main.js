@@ -11,7 +11,9 @@ var say = function(message) { console.log(message); };
 // My Functions Library
 
 window.addEventListener("DOMContentLoaded", function(){
+	
 
+	// My getElementById function
 	function $(x){
 		var theElement = document.getElementById(x);
 		return theElement;
@@ -33,10 +35,32 @@ window.addEventListener("DOMContentLoaded", function(){
 		selectLi.appendChild(makeSelect);
 	};
 	
+	// Find the value of selected radio button.
+	function getSelectedRadio() {
+		var radio = document.forms[0].gender
+		for (var i=0; i<radio.length; i++) {
+			if (radios[i].checked) {
+				genderValue = radios[i].value;
+			};
+		};
+	};
+	
+	function getCheckboxValue(){
+		if ($("favePet").checked) {
+			faveValue = $("favePet").value;
+		} else {
+			faveValue = "No";
+		};
+	};
+	
 	var submitData = function() {
 		var id				= Math.floor(Math.random()*1000001);
 		// Gather round ye olde form field values, and store in ye olde objects.
 		// Object props contain array with the form label and input value.
+		
+		getSelectedRadio();
+		getCheckboxValue();
+		
 		var item			= {};
 			item.petType	= ["Pet Type:", $("petType").value];
 			item.petName	= ["Pet Name:", $("petName").value];
@@ -48,16 +72,47 @@ window.addEventListener("DOMContentLoaded", function(){
 		// Save data into Local Storage: Use Stringify to convert our object to a string.
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Pet is saved to the Pokedex!")
-		
+	};
+	
+	var getData() {
+		// This is supposed to write data from Local Storage back to the browser.
+		var makeDiv = document.createElement("div");
+		makeDiv.setAttribute("id", "items");
+		var makeList = document.createElement("ui");
+		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv);
+		for (var i=0, len=localStorage.length; i<len; i++) {
+			var makeLi = document.createElement("li");
+			makeList.appendChild(makeLi);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			// Convert strings back to being an object from localStorage value.
+			var object = JSON.parse(value);
+			var makeSubList = document.createElement("ul");
+			makeLi.appendChild(makeSubList);
+			for (var n in object) {
+				var makeSubLi = document.createElement("li");
+				makeSubList.appendChild(makeSubLi);
+				var optSubText = object[n][0]+" "+object[n][1];
+				makeSubLi.innerHTML = optSubText;
+			};
+		};
 	};
 	
 	
 	
-	var petGroups = ["--Choose A Pet Type--", "Dogs", "Cats", "Rodents", "Birds", "Farm Animals"];
+	
+	
+	
+	
+	var petGroups = ["--Choose A Pet Type--", "Dogs", "Cats", "Rodents", "Birds", "Farm Animals"],
+		sexvalue,
+		faveValue = "No"
+	;
 	makeCats();
 	
-//	var showData = $("showData");
-//	showData.addEventListener("click", getData);
+	var showData = $("showData");
+	showData.addEventListener("click", getData);
 //	var clearData = $("clearData");	
 //	clearData.addEventListener("click", clearData);
 	var save = $("submitData");
@@ -143,28 +198,7 @@ var kevPetLib = function() {
 		// Supposed to show something here.
 		return true;
 	};
-*/	
-/*	window.onload = initForm;
-	
-	var initForm = function() {
-		var allTags = document.getElementsByTagName ("*");
-		
-		for (var i=0; i<allTags.length; i++) {
-			if (allTags[i].className.indexOf ("reqd") > -1) {
-				allTags[i].onblur = fieldCheck;
-			}
-		}
-	};
-	
-	var fieldCheck = function() {
-		if (this.value == "") {
-			this.className += " highlight";
-			this.focus();
-	} else {
-		this.className = "reqd";
-		}
-	};
-*/	
+*/
 /*
 	// These are my Public Methods & Properties.
 	return {
@@ -187,11 +221,11 @@ var petLib = new kevPetLib();
 
 
 // This would be where I check my code in the console.
-say(petLib.submitData());
+say(submitData());
 
-say(petLib.getData());
+say(getData());
 
-say(petLib.clearData());
+say(clearData());
 
-say(petLib.showArray());
+say(showArray());
 */
